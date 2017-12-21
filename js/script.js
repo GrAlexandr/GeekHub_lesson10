@@ -66,9 +66,10 @@ let timer = () => {
 
 let newGame = () => {
 	timer();
-	
 	addTable();
-	arr = [];
+
+	let arr = [];
+
 		for (let i = 0; i < td.length; i++) {
 			arr.push(i);
 		}
@@ -99,7 +100,6 @@ let gameOver = () => {
 	
 	let gamer,
 			count = 0;
-	arr = [];
 
 		for (let j = 0; j < td.length; j++) {
 			if (+td[j].textContent === j + 1) ++count;
@@ -122,17 +122,17 @@ let gameOver = () => {
 			
 			for(let i = 0; i < arrGamer.length; i++) {
 				let trGamer = elem.createElement('tr');
-				let tdGamer = elem.createElement('td');
+				let tdGamer = elem.createElement('th');
 				let textGamer = elem.createTextNode(arrGamer[i][0]);
 					tdGamer.classList.add('td-chemp');
 					tdGamer.appendChild(textGamer);
 					trGamer.appendChild(tdGamer);
-				let tdBoardSize = elem.createElement('td');
+				let tdBoardSize = elem.createElement('th');
 				let textBoardSize = elem.createTextNode(arrGamer[i][1]);
 					tdBoardSize.classList.add('td-chemp');
 					tdBoardSize.appendChild(textBoardSize);
 					trGamer.appendChild(tdBoardSize);
-				let tdTime = elem.createElement('td');
+				let tdTime = elem.createElement('th');
 				let textTime = elem.createTextNode(arrGamer[i][2]);
 					tdTime.classList.add('td-chemp');
 					tdTime.appendChild(textTime);
@@ -221,4 +221,4 @@ let key = (type) => {
 
 btnNewGame.addEventListener('click', newGame);
 btnGameOver.addEventListener('click', gameOver);
-window.addEventListener('keydown', keyboardEvent);
+elem.addEventListener('keydown', keyboardEvent);
