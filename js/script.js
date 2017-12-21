@@ -12,7 +12,6 @@ let arr = JSON.parse(localStorage.getItem('game')) || [],
 	tableChemp = elem.getElementById('chemp'),
 	inp = elem.getElementById('inp'),
 	divTimer = elem.getElementById('timer'),
-	//date,
 	hh_mi_ss;
 
 let addTable = () => {
@@ -78,7 +77,6 @@ let newGame = () => {
 			td[j].textContent = arr[j];
 			if (td[j].textContent === '0') td[j].className = 'empty';
 		}
-		localStorage.setItem('game', JSON.stringify(arr));
 
 	table.onclick =	function(e) {
 		let inter = e.target.textContent;
@@ -92,9 +90,6 @@ let newGame = () => {
 				}
 			}
 		}
-		for (let j = 0; j < td.length; j++)
-			arr[j] = +td[j].textContent;
-		localStorage.setItem('game', JSON.stringify(arr));
 	};
 };
 
@@ -108,7 +103,6 @@ let gameOver = () => {
 
 		for (let j = 0; j < td.length; j++) {
 			if (+td[j].textContent === j + 1) ++count;
-			arr.push(+td[j].textContent)
 		}
 		if (count === td.length-1) {
 			
@@ -148,7 +142,6 @@ let gameOver = () => {
 		} else {
 			alert('You lose!');
 		}
-		localStorage.setItem('game', JSON.stringify(arr));
 };
 
 let keyboardEvent = (e) => {
@@ -224,9 +217,6 @@ let key = (type) => {
 				break;
 		}
 	}
-	for (let j = 0; j < td.length; j++)
-		arr[j] = +td[j].textContent;
-	localStorage.setItem('game', JSON.stringify(arr));
 };
 
 btnNewGame.addEventListener('click', newGame);
