@@ -36,14 +36,15 @@ let addTable = () => {
 			}
 		}
 	}
-}
+};
 
 let compareRandom = (a, b) => {
 	return Math.random() - 0.5;
-}
+};
+
 let timerId;
 let timer = () => {
-		var hh = 0,
+		let hh = 0,
 			min = 0,
 			sec = 0;
 			
@@ -62,12 +63,11 @@ let timer = () => {
 			
 			divTimer.textContent = hh_mi_ss;
 		}, 1000);
-}
+};
 
 let newGame = () => {
 	timer();
 	
-	//dateTo = new Date();
 	addTable();
 	arr = [];
 		for (let i = 0; i < td.length; i++) {
@@ -81,20 +81,9 @@ let newGame = () => {
 		localStorage.setItem('game', JSON.stringify(arr));
 
 	table.onclick =	function(e) {
-		//let sell0 = +sell.value;
-		//let sell1 = sell0 - 1;
 		let inter = e.target.textContent;
 		for (let i = 0; i < td.length; i++) {
 			if (td[i].textContent === '0' && e.target === td[i - 1] || e.target === td[i + 1] || e.target === td[i + +sell.value] || e.target === td[i - sell.value]) {
-				//if (sell0 === 3) if (e.target === td[2] && td[i] === td[3] || e.target === td[3] && td[i] === td[2]) break;
-				//if (sell0 === 3) if (e.target === td[5] && td[i] === td[6] || e.target === td[6] && td[i] === td[5]) break;
-				//if (sell0 === 4) if (e.target === td[sell1] || e.target === td[7] || e.target === td[11]) break;
-				//if (sell0 === 5) if (e.target === sell1 || i === 9 || i === 14 || i === 19) break;
-				//if (sell0 === 6) if (e.target === sell1 || i === 11 || i === 17 || i === 23 || i === 29) break;
-				//if (sell0 === 7) if (e.target === sell1 || i === 13 || i === 20 || i === 27 || i === 34 || i === 41) break;
-				//if (sell0 === 8) if (i === sell1 || i === 15 || i === 23 || i === 31 || i === 39 || i === 47 || i === 55) break;
-				//if (sell0 === 9) if (i === sell1 || i === 17 || i === 26 || i === 35 || i === 44 || i === 53 || i === 62 || i === 71) break;
-				//if (sell0 === 10) if (i === sell1 || i === 19 || i === 29 || i === 39 || i === 49 || i === 59 || i === 69 || i === 79 || i === 89) break;
 				if (td[i].textContent === '0') {
 					td[i].classList.remove('empty');
 					td[i].textContent = inter;
@@ -107,18 +96,14 @@ let newGame = () => {
 			arr[j] = +td[j].textContent;
 		localStorage.setItem('game', JSON.stringify(arr));
 	};
-}
+};
 
 let gameOver = () => {
 	clearInterval(timerId);
 	divTimer.style.display = 'none';
 	
 	let gamer,
-		//dateAfter = new Date(),
-		//time = dateAfter - dateTo,
-		//resultTime = 'hh: ' + Math.round( time / (3600 * 1000) ) + ' mi: ' + Math.round( time / (60 * 1000) ) + ' ss: ' + Math.round( time / 1000 ),
-		count = 0;
-	
+			count = 0;
 	arr = [];
 
 		for (let j = 0; j < td.length; j++) {
@@ -164,7 +149,7 @@ let gameOver = () => {
 			alert('You lose!');
 		}
 		localStorage.setItem('game', JSON.stringify(arr));
-}
+};
 
 let keyboardEvent = (e) => {
 	switch (e.keyCode) {
@@ -177,7 +162,7 @@ let keyboardEvent = (e) => {
 		case 39: key('right');
 			break;
 	}
-}
+};
 
 let key = (type) => {
 	for (let i = 0; i < td.length; i++) {
@@ -242,7 +227,7 @@ let key = (type) => {
 	for (let j = 0; j < td.length; j++)
 		arr[j] = +td[j].textContent;
 	localStorage.setItem('game', JSON.stringify(arr));
-}
+};
 
 btnNewGame.addEventListener('click', newGame);
 btnGameOver.addEventListener('click', gameOver);
