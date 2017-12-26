@@ -22,6 +22,7 @@ h1 {
 #timer {
 	display: inline-block;
 	margin-left: 5px;
+	color: #7f1121;
 }
 table {
 	margin: 0 auto;
@@ -79,28 +80,27 @@ td {
 	margin: 5px;
 	border-collapse: collapse;
 }
-.td-chemp {
-	width: 33%;
-	height: 30px;
-	float: none;
-	padding: 5px;
-	padding-right: 10px;
-	border: 1px solid black;
-	font-size: 1em;
-	font-weight: normal;
-	box-shadow:	none;
+caption {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.chemp caption {
+	margin-bottom: 10px;
+	font-size: 18px;
 }
 .chemp th {
 	width: 33%;
 	padding: 10px;
 	border: 1px solid black;
 	font-size: 1em;
+	font-weight: normal;
+}
+#chemp .td-chemp {
+	font-size: 1.1em;
 	font-weight: bold;
 }
-.chemp caption {
-	margin-bottom: 10px;
-	font-size: 18px;
-}
+
 @media screen and (max-width: 590px){
 	h1 {
 		margin-left: 90px;
@@ -150,9 +150,9 @@ td {
 		min-height: 520px;
 	}
 	.btn {
-	width: 27%;
-	border: 2px solid #7f1121;
-	font-size: 0.8em;
+		width: 27%;
+		border: 2px solid #7f1121;
+		font-size: 0.8em;
 	}
 }
 @media screen and (max-width: 410px){
@@ -177,5 +177,14 @@ td {
 	}
 	.board {
 		margin-top: 5px;
+	}
+	caption {
+		font-size: 1.4em;
+	}
+	#chemp .td-chemp {
+		font-size: 1em;
+	}
+	.chemp th {
+		font-size: 0.8em;
 	}
 }

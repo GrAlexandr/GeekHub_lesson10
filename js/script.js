@@ -124,17 +124,14 @@ let gameOver = () => {
 				let trGamer = elem.createElement('tr');
 				let tdGamer = elem.createElement('th');
 				let textGamer = elem.createTextNode(arrGamer[i][0]);
-					tdGamer.classList.add('td-chemp');
 					tdGamer.appendChild(textGamer);
 					trGamer.appendChild(tdGamer);
 				let tdBoardSize = elem.createElement('th');
 				let textBoardSize = elem.createTextNode(arrGamer[i][1]);
-					tdBoardSize.classList.add('td-chemp');
 					tdBoardSize.appendChild(textBoardSize);
 					trGamer.appendChild(tdBoardSize);
 				let tdTime = elem.createElement('th');
 				let textTime = elem.createTextNode(arrGamer[i][2]);
-					tdTime.classList.add('td-chemp');
 					tdTime.appendChild(textTime);
 					trGamer.appendChild(tdTime);
 					tableChemp.appendChild(trGamer);
